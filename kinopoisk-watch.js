@@ -1,4 +1,4 @@
-throw new Error('KINOPOISK TEST');
+alert('KINOPOISK JS LOADED');
 
 (function() {
     'use strict';
