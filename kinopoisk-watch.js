@@ -33,11 +33,19 @@
             console.log('Kinopoisk', 'RESULTS COUNT:', results.length);
             console.log('Kinopoisk', results);
             
-            oncomplete({
-                secuses: true,
-                page: 1,
-                results: results
-            });
+Lampa.Storage.set(
+    'kinopoisk_movies',
+    results
+);
+
+oncomplete({
+    secuses: true,
+    page: 1,
+    results: Lampa.Storage.get(
+        'kinopoisk_movies',
+        []
+    )
+});
         })
         .catch(() => {
             oncomplete({
