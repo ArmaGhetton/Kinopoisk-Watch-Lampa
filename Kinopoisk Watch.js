@@ -15,6 +15,8 @@
             const results = data.items
                 .filter(item => item.tmdb_full)
                 .map(item => item.tmdb_full);
+            
+            console.log('KINOPOISK RESULTS', results);
 
             oncomplete({
                 page: 1,
