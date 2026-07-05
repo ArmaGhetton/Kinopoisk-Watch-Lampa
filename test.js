@@ -1,7 +1,9 @@
 function startPlugin() {
     console.log('TEST PLUGIN STARTED');
+    Lampa.Noty.show('TEST PLUGIN STARTED');
 
-    Lampa.Noty.show('АРМАГЕДДОН 999');
+    Lampa.Listener.follow('full', function(e) {
+        if (e.type === 'complite') {
     
     var button = $(
         '<li class="menu__item selector">' +
