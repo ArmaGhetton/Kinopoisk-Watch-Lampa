@@ -34,12 +34,14 @@
             console.log('Kinopoisk', results);
             
             oncomplete({
+                secuses: true,
                 page: 1,
                 results: results
             });
         })
         .catch(() => {
             oncomplete({
+                secuses: true,
                 page: 1,
                 results: []
             });
@@ -81,7 +83,7 @@ comp.create = function() {
     });
 };
 
-comp.nextPageRequest = function(
+comp.nextPageReuest = function(
     object,
     resolve,
     reject
@@ -98,6 +100,16 @@ comp.nextPageRequest = function(
 
     function start() {
 
+var manifest = {
+    type: 'video',
+    version: '1.0.0',
+    name: 'Кинопоиск',
+    description: '',
+    component: 'kinopoisk_watch'
+};
+
+Lampa.Manifest.plugins = manifest;
+        
         Lampa.Component.add(
             'kinopoisk_watch',
             component
