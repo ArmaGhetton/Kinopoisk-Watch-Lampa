@@ -1,6 +1,6 @@
 (function () {
     
-    console.log('KINOPOISK PLUGIN LOADED');
+    console.log('Kinopoisk', 'PLUGIN LOADED');
     
     'use strict';
 
@@ -8,9 +8,18 @@
     const DEVICE_ID = '01b66544-35c7-4515-ac06-0d1b90574608';
 
     function load(oncomplete) {
-    
-    console.log('LOAD STARTED');
 
+		function clear() {}
+
+var Api = {
+    full: function(params, oncomplete, onerror) {
+        load(oncomplete);
+    },
+    clear: clear
+};
+		
+   console.log('Kinopoisk', 'LOAD STARTED');
+		
         fetch(
             `${WORKER_URL}/watchlist?device_id=${DEVICE_ID}`
         )
@@ -40,13 +49,25 @@
 
         const comp = new Lampa.InteractionCategory(object);
 
-        comp.create = function () {
-            load(this.build.bind(this));
-        };
+comp.create = function() {
+    Api.full(
+        object,
+        this.build.bind(this),
+        this.empty.bind(this)
+    );
+};
 
-        comp.nextPageRequest = function (object, resolve) {
-            load(resolve.bind(comp));
-        };
+comp.nextPageRequest = function(
+    object,
+    resolve,
+    reject
+) {
+    Api.full(
+        object,
+        resolve.bind(comp),
+        reject.bind(comp)
+    );
+};
 
         return comp;
     }
