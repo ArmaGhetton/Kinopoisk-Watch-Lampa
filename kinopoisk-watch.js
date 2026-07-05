@@ -1,3 +1,5 @@
+throw new Error('KINOPOISK TEST');
+
 (function() {
     'use strict';
     var network = new Lampa.Reguest();
