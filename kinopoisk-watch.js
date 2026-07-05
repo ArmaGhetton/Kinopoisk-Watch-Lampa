@@ -12,6 +12,8 @@
     function load(oncomplete) {
 
    console.log('Kinopoisk', 'LOAD STARTED');
+
+   alert('LOAD STARTED');
 		
         fetch(
             `${WORKER_URL}/watchlist?device_id=${DEVICE_ID}`
@@ -58,14 +60,25 @@ var Api = {
 
 	console.log('Kinopoisk', 'COMPONENT CREATED');
 
+    alert('COMPONENT CREATED');
+
         const comp = new Lampa.InteractionCategory(object);
 
 comp.create = function() {
-    Api.full(
-        object,
-        this.build.bind(this),
-        this.empty.bind(this)
-    );
+
+    console.log('Kinopoisk', 'CREATE CALLED');
+
+    this.build({
+        page: 1,
+        results: [{
+            id: 76479,
+            media_type: 'tv',
+            source: 'tmdb',
+            name: 'Пацаны',
+            original_name: 'The Boys',
+            poster_path: '/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg'
+        }]
+    });
 };
 
 comp.nextPageRequest = function(
