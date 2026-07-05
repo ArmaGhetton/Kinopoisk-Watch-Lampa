@@ -19,9 +19,10 @@
         .then(r => r.json())
         .then(data => {
 
-            const results = data.items
-                .filter(item => item.tmdb_full)
-                .map(item => item.tmdb_full);
+        const results = data.items.slice(0, 1).map(item => item.tmdb_full);
+
+            console.log('Kinopoisk', 'RESULTS COUNT:', results.length);
+            console.log('Kinopoisk', results);
             
             oncomplete({
                 page: 1,
