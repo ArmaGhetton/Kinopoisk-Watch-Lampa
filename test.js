@@ -1,12 +1,12 @@
 function startPlugin() {
     console.log('TEST PLUGIN STARTED');
 
-    Lampa.Noty.show('TEST PLUGIN STARTED');
-
+    Lampa.Noty.show('АРМАГЕДДОН 999');
+    
     var button = $(
         '<li class="menu__item selector">' +
         '<div class="menu__ico">🧪</div>' +
-        '<div class="menu__text">TEST BUTTON</div>' +
+        '<div class="menu__text">АРМАГЕДДОН 999</div>' +
         '</li>'
     );
 
