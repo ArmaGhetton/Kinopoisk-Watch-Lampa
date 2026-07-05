@@ -19,7 +19,14 @@
         .then(r => r.json())
         .then(data => {
 
-        const results = data.items.slice(0, 1).map(item => item.tmdb_full);
+            const results = [{
+    id: 76479,
+    media_type: 'tv',
+    source: 'tmdb',
+    name: 'Пацаны',
+    original_name: 'The Boys',
+    poster_path: '/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg'
+}];
 
             console.log('Kinopoisk', 'RESULTS COUNT:', results.length);
             console.log('Kinopoisk', results);
