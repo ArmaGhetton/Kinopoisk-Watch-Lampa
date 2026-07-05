@@ -304,7 +304,7 @@ alert('KINOPOISK JS LOADED');
                 Lampa.Activity.push({
                     url: '',
                     title: manifest.name,
-                    component: 'kinopoisk',
+                    component: 'КИНОПОИСК ТВОЯ МАТЬ',
                     page: 1
                 });
             });
